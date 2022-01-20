@@ -44,7 +44,7 @@ with open(output_file, "w", encoding="utf-8") as datafile:
     print("----------------------------")
     for candidate in candidates:
         percent = round(votes_per_candidate[candidates.index(candidate)]/total_number_of_votes * 100, 2)
-        x = candidate + ": " + str(percent) + "00% (" + str(votes_per_candidate[candidates.index(candidate)]) + ")"
+        x = candidate + ": " + '{:.3f}'.format(percent) + "%(" + str(votes_per_candidate[candidates.index(candidate)]) + ")"
         writer.writerow([str(x)])
         print(x)
         #using this if state to look for the candidate with the highest vote percentage
